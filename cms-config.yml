@@ -1,0 +1,54 @@
+backend:
+  name: github
+  # CHANGE THIS to your GitHub username and repository name, e.g. maria123/soie-site
+  repo: YOUR-GITHUB-USERNAME/soie-site
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "products"
+    label: "Products"
+    files:
+      - file: "products.json"
+        label: "Product Catalog"
+        name: "catalog"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.price}} ({{fields.stock}} in stock)"
+            fields:
+              - { label: "Active (unchecking hides it from the site without deleting it)", name: "active", widget: "boolean", default: true }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "SKU / product code", name: "sku", widget: "string", required: false, hint: "Optional. Useful for your own inventory tracking." }
+              - { label: "Price", name: "price", widget: "string", hint: "Include the $ sign, e.g. $48" }
+              - { label: "Stock quantity", name: "stock", widget: "number", value_type: "int", default: 0, min: 0 }
+              - label: "Categories"
+                name: "categories"
+                widget: "select"
+                multiple: true
+                options: ["new-in", "bras", "panties", "sets"]
+              - label: "Sizes available"
+                name: "sizes"
+                widget: "select"
+                multiple: true
+                required: false
+                options: ["XS", "S", "M", "L", "XL"]
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - label: "Photo"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Optional. If left blank, a placeholder color block is shown instead."
+              - label: "Placeholder color (used only if no photo)"
+                name: "tone"
+                widget: "select"
+                required: false
+                default: ""
+                options:
+                  - { label: "Rose", value: "" }
+                  - { label: "Sand", value: "tone-2" }
+                  - { label: "Deep rose", value: "tone-3" }
+                  - { label: "Rose sand", value: "tone-4" }

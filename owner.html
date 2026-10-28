@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Owner Portal — Soie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#F7F3EF;--ivory-deep:#F1EAE2;--espresso:#2A211C;--espresso-soft:#5A4E47;--rose:#C48793;--rose-deep:#A5677A;--sand:#EFE6DC;--line:#DDD2C7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ivory);color:var(--espresso);font-family:'Sora',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:'Fraunces',serif;font-weight:500;margin:0;line-height:1.1;letter-spacing:-0.01em}
+p{margin:0}a{color:inherit;text-decoration:none}
+[hidden]{display:none!important}
+button:focus-visible,a:focus-visible{outline:2px solid var(--rose-deep);outline-offset:3px}
+.muted{color:var(--espresso-soft)}
+.bar{border-bottom:1px solid var(--line);background:var(--ivory-deep)}
+.bar .inner{max-width:1000px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-family:'Fraunces',serif;font-style:italic;font-size:1.4rem}
+.tag{font-size:.78rem;letter-spacing:.04em;color:var(--rose-deep);margin-left:10px}
+.wrap{max-width:1000px;margin:0 auto;padding:48px 24px 80px}
+.btn{display:inline-block;padding:13px 28px;border-radius:2px;font-family:'Sora',sans-serif;font-size:.88rem;cursor:pointer;border:1px solid var(--espresso);transition:background .18s,color .18s,border-color .18s}
+.btn-dark{background:var(--espresso);color:var(--ivory)}.btn-dark:hover{background:var(--rose-deep);border-color:var(--rose-deep)}
+.btn-outline{background:transparent;color:var(--espresso)}.btn-outline:hover{background:var(--espresso);color:var(--ivory)}
+.login{max-width:460px;margin:60px auto 0;text-align:center}
+.login h1{font-size:2.2rem;margin-bottom:14px}
+.login .btn{margin-top:28px}
+.eyebrow{font-family:'Fraunces',serif;font-style:italic;color:var(--rose-deep);margin-bottom:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0}
+.stat{background:var(--sand);padding:20px 22px;border-radius:2px}
+.stat .n{font-family:'Fraunces',serif;font-size:2.1rem;line-height:1}
+.stat .l{font-size:.82rem;color:var(--espresso-soft);margin-top:6px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-family:'Fraunces',serif;font-weight:500;color:var(--espresso-soft);font-size:.85rem}
+.pill{display:inline-block;font-size:.72rem;padding:3px 10px;border-radius:12px;color:var(--ivory)}
+.pill.ok{background:#6B8F71}.pill.low{background:var(--rose-deep)}.pill.out{background:var(--espresso)}
+.help{margin-top:40px;padding:22px 24px;border:1px solid var(--line);border-radius:2px;font-size:.9rem}
+.help h2{font-size:1.15rem;margin-bottom:10px}
+.help ul{margin:0;padding-left:20px}.help li{margin-bottom:6px}
+@media(max-width:640px){.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="inner">
+    <div><a href="/" class="logo">Soie</a><span class="tag">OWNER PORTAL</span></div>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="/" class="muted" style="font-size:.85rem">View customer site</a>
+    </div>
+  </div>
+</div>
+
+<!-- Dashboard -->
+<div class="wrap" id="logged-in">
+  <p class="eyebrow">Owner portal</p>
+  <h1 style="font-size:2.2rem">Stock overview</h1>
+
+  <div class="stats">
+    <div class="stat"><div class="n" id="s-total">–</div><div class="l">Products listed</div></div>
+    <div class="stat"><div class="n" id="s-low">–</div><div class="l">Low stock (5 or fewer)</div></div>
+    <div class="stat"><div class="n" id="s-out">–</div><div class="l">Sold out</div></div>
+  </div>
+
+  <div class="actions">
+    <a href="/admin.html" class="btn btn-dark">Add / edit products, photos &amp; stock</a>
+    <a href="/#shop" class="btn btn-outline" target="_blank" rel="noopener">Preview shop</a>
+  </div>
+  <p class="muted" style="font-size:.85rem;margin:-24px 0 40px">The editor asks you to sign in with GitHub. Only people you’ve given access to your repository can make changes.</p>
+
+  <h2 style="font-size:1.4rem;margin-bottom:12px">Inventory</h2>
+  <p class="muted" style="font-size:.85rem;margin-bottom:12px">Lowest stock first. Edits you make in the editor appear here about a minute after you publish.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Product</th><th>SKU</th><th>Price</th><th>Stock</th><th>Status</th></tr></thead>
+      <tbody id="inv"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody>
+    </table>
+  </div>
+
+  <div class="help">
+    <h2>Quick guide</h2>
+    <ul>
+      <li><strong>New product:</strong> open the editor, click “Products”, then “Product Catalog”, then “Add products”.</li>
+      <li><strong>Photo:</strong> inside a product, use the Photo field to upload an image from your device.</li>
+      <li><strong>Stock:</strong> change the “Stock quantity” number. At 0 the shop shows “Sold out”.</li>
+      <li><strong>Hide without deleting:</strong> untick “Active”.</li>
+      <li><strong>Save:</strong> click “Publish” at the top of the editor. Allow about a minute for the site to update.</li>
+      <li><strong>Customer messages:</strong> in your Netlify dashboard, open the “Forms” tab.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  fetch('/products.json', { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('bad'); return r.json(); })
+    .then(function (d) {
+      var list = (d.products || []).slice().sort(function (a, b) { return (a.stock || 0) - (b.stock || 0); });
+      var low = 0, sold = 0;
+      var rows = list.map(function (p) {
+        var st = typeof p.stock === 'number' ? p.stock : 0;
+        var pill = '<span class="pill ok">In stock</span>';
+        if (st === 0) { sold++; pill = '<span class="pill out">Sold out</span>'; }
+        else if (st <= 5) { low++; pill = '<span class="pill low">Low</span>'; }
+        if (p.active === false) pill = '<span class="pill out">Hidden</span>';
+        return '<tr><td>' + esc(p.name) + '</td><td>' + esc(p.sku || '–') + '</td><td>' + esc(p.price) +
+               '</td><td>' + st + '</td><td>' + pill + '</td></tr>';
+      });
+      document.getElementById('s-total').textContent = list.length;
+      document.getElementById('s-low').textContent = low;
+      document.getElementById('s-out').textContent = sold;
+      document.getElementById('inv').innerHTML = rows.join('') || '<tr><td colspan="5" class="muted">No products yet.</td></tr>';
+    })
+    .catch(function () {
+      document.getElementById('inv').innerHTML = '<tr><td colspan="5" class="muted">Couldn’t load the product list.</td></tr>';
+    });
+})();
+</script>
+</body>
+</html>

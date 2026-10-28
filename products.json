@@ -1,0 +1,16 @@
+{
+  "products": [
+    { "active": true, "name": "Cloud Wire-Free Bra", "sku": "SOIE-BRA-001", "price": "$48", "stock": 24, "categories": ["new-in", "bras"], "sizes": ["S", "M", "L"], "description": "A soft-cup, wire-free bra built for full-day wear.", "tone": "tone-2" },
+    { "active": true, "name": "Ribbed Bralette", "sku": "SOIE-BRA-002", "price": "$38", "stock": 15, "categories": ["new-in", "bras"], "sizes": ["XS", "S", "M"], "description": "A ribbed, pullover bralette with light shaping.", "tone": "" },
+    { "active": true, "name": "Seamless Everyday Brief", "sku": "SOIE-PAN-001", "price": "$18", "stock": 40, "categories": ["new-in", "panties"], "sizes": ["XS", "S", "M", "L"], "description": "Tagless and seamless for wearing under anything.", "tone": "tone-4" },
+    { "active": true, "name": "Soft-Cup T-Shirt Bra", "sku": "SOIE-BRA-003", "price": "$44", "stock": 18, "categories": ["bras"], "sizes": ["S", "M", "L", "XL"], "description": "A smooth, molded cup that disappears under fitted tops.", "tone": "tone-3" },
+    { "active": true, "name": "Lightly Lined Balconette", "sku": "SOIE-BRA-004", "price": "$46", "stock": 9, "categories": ["bras"], "sizes": ["S", "M", "L"], "description": "A lifted shape with a lower neckline for open collars.", "tone": "tone-2" },
+    { "active": true, "name": "Cotton Everyday Bra", "sku": "SOIE-BRA-005", "price": "$36", "stock": 0, "categories": ["bras"], "sizes": ["XS", "S", "M"], "description": "Breathable cotton blend for warm-weather comfort.", "tone": "" },
+    { "active": true, "name": "High-Rise Brief", "sku": "SOIE-PAN-002", "price": "$16", "stock": 32, "categories": ["panties"], "sizes": ["XS", "S", "M", "L", "XL"], "description": "Full coverage with a soft, wide waistband.", "tone": "tone-4" },
+    { "active": true, "name": "Cheeky Hipster, 3-Pack", "sku": "SOIE-PAN-003", "price": "$32", "stock": 21, "categories": ["panties"], "sizes": ["S", "M", "L"], "description": "Three everyday hipsters in rotating core colors.", "tone": "tone-3" },
+    { "active": true, "name": "Lace-Trim Bikini", "sku": "SOIE-PAN-004", "price": "$19", "stock": 4, "categories": ["panties"], "sizes": ["XS", "S", "M"], "description": "A classic bikini cut finished with a delicate lace edge.", "tone": "tone-2" },
+    { "active": true, "name": "The Everyday Set", "sku": "SOIE-SET-001", "price": "$62", "stock": 12, "categories": ["sets"], "sizes": ["S", "M", "L"], "description": "Our soft-cup bra and high-rise brief, matched.", "tone": "" },
+    { "active": true, "name": "Ribbed Bralette + Brief Set", "sku": "SOIE-SET-002", "price": "$54", "stock": 7, "categories": ["sets"], "sizes": ["XS", "S", "M"], "description": "Ribbed bralette paired with a matching brief.", "tone": "tone-4" },
+    { "active": true, "name": "Lace Trim Matching Set", "sku": "SOIE-SET-003", "price": "$68", "stock": 3, "categories": ["sets"], "sizes": ["S", "M", "L"], "description": "Lace-trimmed bra and brief, sold as a pair.", "tone": "tone-3" }
+  ]
+}
